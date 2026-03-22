@@ -1,0 +1,124 @@
+.projects {
+  background: #ffffff;
+  padding: 8rem 8vw;
+}
+
+.header {
+  max-width: 1100px;
+  margin-bottom: 4rem;
+}
+
+.label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8b9ab0;
+  margin: 0 0 1.2rem;
+}
+
+.heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -0.02em;
+  color: #0d1117;
+  margin: 0;
+}
+
+.list {
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 60px 1fr 40px;
+  align-items: start;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid #e8e4dc;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease;
+}
+
+.card:last-child {
+  border-bottom: 1px solid #e8e4dc;
+}
+
+.card:hover .title {
+  color: #185fa5;
+}
+
+.card:hover .arrow {
+  transform: translateX(6px);
+}
+
+.number {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: #8b9ab0;
+  padding-top: 0.3rem;
+}
+
+.cardBody {}
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #0d1117;
+  margin: 0 0 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.description {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #5a5a5a;
+  margin: 0 0 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  background: #f0ece4;
+  color: #5a5a5a;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #8b9ab0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #185fa5;
+}
+
+@media (max-width: 600px) {
+  .card {
+    grid-template-columns: 40px 1fr;
+  }
+}

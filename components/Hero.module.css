@@ -1,0 +1,23 @@
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.linkedinLink {
+  display: inline-block;
+  margin-top: 1rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.linkedinLink:hover {
+  opacity: 1;
+}
+
+.linkedinIcon {
+  display: block;
+}
