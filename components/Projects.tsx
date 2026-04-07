@@ -1,6 +1,18 @@
 import styles from './Projects.module.css';
+import NextImage from 'next/image';
 
-const projects = [
+type Project = {
+  number: string;
+  title: string;
+  tags: string[];
+  description: string;
+  github?: string;
+  linkedinPost?: string;
+  logo?: string;
+  websiteLink?: string;
+};
+
+const projects: Project[] = [
   {
     number: '01',
     title: 'Project_Quant-model_1 ',
@@ -19,6 +31,15 @@ const projects = [
     github: 'https://github.com/VitasNovickas/Laliga-prediction-model',
     linkedinPost: 'https://www.linkedin.com/feed/update/urn:li:activity:7438660080285278208/?originTrackingId=nj2rgrEtj0CGxRwUf3Ku9A%3D%3D'
   },
+  {
+    number: '03',
+    title: 'Quizza.online',
+    tags: ['AI', 'Startup','Educational technology', 'JavaScript', 'HTML', 'Supabase'],
+    description:
+      'Real-time multiplayer quiz game developed closesly togehter with Vakris Perliba',
+    websiteLink: 'https://quizza.online/',
+    logo: '/image/fCWmk9zw.jpg',
+  },
 ];
 
 export default function Projects() {
@@ -33,7 +54,18 @@ export default function Projects() {
           <div key={p.number} className={styles.card}>
             <span className={styles.number}>{p.number}</span>
             <div className={styles.cardBody}>
-              <h3 className={styles.title}>{p.title}</h3>
+              <div className={styles.titleRow}>
+                <h3 className={styles.title}>{p.title}</h3>
+                {p.logo && (
+                  <NextImage
+                    src={p.logo}
+                    alt={`${p.title} logo`}
+                    width={28}
+                    height={28}
+                    className={styles.logo}
+                  />
+                )}
+              </div>
               <p className={styles.description}>{p.description}</p>
               <div className={styles.tags}>
                 {p.tags.map((t) => (
@@ -41,22 +73,19 @@ export default function Projects() {
                 ))}
               </div>
               <div className={styles.links}>
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  GitHub →
-                </a>
+                {p.github && (
+                  <a href={p.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                    GitHub →
+                  </a>
+                )}
                 {p.linkedinPost && (
-                  <a
-                    href={p.linkedinPost}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
+                  <a href={p.linkedinPost} target="_blank" rel="noopener noreferrer" className={styles.link}>
                     LinkedIn post →
+                  </a>
+                )}
+                {p.websiteLink && (
+                  <a href={p.websiteLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                    Visit site →
                   </a>
                 )}
               </div>

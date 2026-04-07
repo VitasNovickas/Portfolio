@@ -74,6 +74,18 @@
   transition: color 0.2s ease;
 }
 
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem; /* whatever spacing you have on .title currently */
+}
+
+.logo {
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
 .description {
   font-family: 'Lora', serif;
   font-size: 0.95rem;
